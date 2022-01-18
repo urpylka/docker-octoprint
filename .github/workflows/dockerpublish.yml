@@ -43,6 +43,8 @@ jobs:
           # Use Docker "latest" tag convention
           [ "$VERSION" == "main" ] && VERSION=latest
 
+          # https://docs.docker.com/buildx/working-with-buildx/#build-multi-platform-images
+          docker run --privileged --rm tonistiigi/binfmt --install all
           docker buildx create --use
           docker buildx build --push \
             --tag $IMAGE_ID:$VERSION \
