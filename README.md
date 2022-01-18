@@ -7,7 +7,7 @@ This image based on [the origin's repo](https://github.com/OctoPrint/octoprint-d
 
 ```bash
 docker volume create octoprint
-docker run -d --restart unless-stopped -p 80:80 --device /dev/ttyACM0:/dev/ttyACM0 -v octoprint:/octoprint --name octoprint urpylka/octoprint:latest
+docker run -d --restart unless-stopped -p 80:80 --device /dev/ttyACM0 -v octoprint:/octoprint --name octoprint urpylka/octoprint:latest
 ```
 
 It has prebuild images for:
