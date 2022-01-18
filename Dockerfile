@@ -27,7 +27,7 @@ RUN curl --create-dirs -o /home/octoprint/tmp/octoprint.tar.gz \
 
 RUN tar xzf /home/octoprint/tmp/octoprint.tar.gz --strip-components 1 -C /home/octoprint/tmp
 
-RUN pip install /home/octoprint/tmp && rm -rf /home/octoprint/tmp
+RUN pip install /home/octoprint/tmp --no-cache-dir && rm -rf /home/octoprint/tmp
 
 VOLUME /octoprint
 WORKDIR /octoprint
