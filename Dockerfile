@@ -2,7 +2,7 @@
 # RUN apt-get update && apt-get install -y curl build-essential
 
 FROM python:alpine3.17
-RUN apk --no-cache add build-base curl linux-headers
+RUN apk --no-cache add build-base curl linux-headers libffi-dev
 
 # RUN groupadd --gid 1000 octoprint \
 #   && useradd --uid 1000 --gid octoprint -G dialout --shell /bin/bash -m octoprint \
