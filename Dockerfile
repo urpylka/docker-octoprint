@@ -1,7 +1,7 @@
 # FROM python:3-slim-buster
 # RUN apt-get update && apt-get install -y curl build-essential
 
-FROM python:3-alpine
+FROM python:alpine3.17
 RUN apk --no-cache add build-base curl linux-headers
 
 # RUN groupadd --gid 1000 octoprint \
@@ -23,7 +23,7 @@ ENV PATH "${PYTHONUSERBASE}/bin:${PATH}"
 
 RUN curl --create-dirs -o /home/octoprint/tmp/octoprint.tar.gz \
   -fsSL --compressed --retry 3 --retry-delay 10 \
-  https://github.com/OctoPrint/OctoPrint/archive/1.7.2.tar.gz
+  https://github.com/OctoPrint/OctoPrint/archive/1.8.7.tar.gz
 
 RUN tar xzf /home/octoprint/tmp/octoprint.tar.gz --strip-components 1 -C /home/octoprint/tmp
 
